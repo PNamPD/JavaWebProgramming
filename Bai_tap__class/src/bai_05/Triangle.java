@@ -31,22 +31,22 @@ public class Triangle {
     private int flag1;
     private int flag2;
     Scanner in= new Scanner(System.in);
-    public void geta(int a){
+    public void seta(int a){
         this.a=a;
     }
-    public int seta(){
+    public int geta(){
         return this.a;
     }
-    public void getb(int b){
+    public void setb(int b){
         this.b=b;
     }
-    public int setb(){
+    public int getb(){
         return this.b;
     }
-    public void getc(int c){
+    public void setc(int c){
         this.c=c;
     }
-    public int setc(){
+    public int getc(){
         return this.c;
     }
 
@@ -74,29 +74,6 @@ public class Triangle {
             this.flag2 = flag2;
         }
     
-    public void inputInfo(){
-        do{
-            System.out.println("Nhap vao canh a= ");
-            this.a=in.nextInt();
-            if(this.a<=0){
-                System.out.println("Vui long nhap lai!");
-            }
-        }while(this.a<=0);
-        do{
-            System.out.println("Nhap vao canh b= ");
-            this.b=in.nextInt();
-            if(this.b<=0){
-                System.out.println("Vui long nhap lai!");
-            }
-        }while(this.b<=0);
-        do{
-            System.out.println("Nhap vao canh c= ");
-            this.c=in.nextInt();
-            if(this.c<=0){
-                System.out.println("Vui long nhap lai!");
-            }
-        }while(this.c<=0);
-    }
     // tam giac vuong
     public boolean rightTriangle(int a, int b, int c){
         int test= b*b + c*c;
@@ -110,12 +87,17 @@ public class Triangle {
     public boolean isoscelesTriangle(int a,int b,int c){
         return (a==b && a==c);
     }
-    public boolean testTamGiac(int a,int b,int c){
-        int tong;
-        tong=a+b;
-        return tong>=c;
+    public boolean testTamGiac(int a,int b,int c){   
+        return ((a+b)>=c);
     }
-    
+    public int kiemTra(int a,int b,int c){
+        int max=a;
+        if(b>=max){
+            max=b;
+        }
+        else max=c;
+        return max;
+    }
     public void xacDinh(int a,int b,int c){
 /*        int max;
         if(this.a>this.b && this.a>this.c){
@@ -139,8 +121,9 @@ public class Triangle {
                 this.flag2=1;
             }
         
-        if(testTamGiac(this.a,this.b,this.c)==true || testTamGiac(this.b,this.c,this.a)==true || testTamGiac(this.c,this.a,this.b)==true){
-            if(this.flag2==1 && this.flag1==1){
+        if(testTamGiac(this.a,this.b,this.c)==true && testTamGiac(this.b,this.c,this.a)== true && testTamGiac(this.c,this.a,this.b)==true){
+            System.out.println("k phai tam giac");
+        }else if(this.flag2==1 && this.flag1==1){
             System.out.println("Day la tam giac vuong can!");
             }
             else if(this.flag==1){
@@ -150,9 +133,6 @@ public class Triangle {
             }else if(this.flag2==1){
             System.out.println("Day la tam giac can!");
             }else System.out.println("Day la tam giac binh thuong");
-        }else System.out.println("k phai tam giac");
     }
-    
-    
 }
 

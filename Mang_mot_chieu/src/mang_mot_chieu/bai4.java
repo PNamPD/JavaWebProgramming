@@ -44,9 +44,22 @@ public class bai4 {
                 }
             }
         }
+        System.out.println("");
         System.out.println("Mang giam dan: ");
         for(int i=0;i<15;i++){
             System.out.print(" "+mangNguyen[i]);
         }
+        int demChan=0;
+        int demLe=0;
+        for(int i=0;i<15;i++){
+            if(mangNguyen[i]%2==0){
+                demChan++;
+            }
+            else demLe++;
+        }
+        System.out.println("");
+        System.out.println("SO luong so chan la "+demChan+" va so le la "+demLe+"!");
+        
+        
     }
 }

@@ -26,7 +26,7 @@ public class bai3 {
                 }
             }while(mangNguyen[i]<0);
         }
-        int a=0;
+        int a;
         // khai bao bien a
         System.out.print("a= ");
         a=bc.nextInt();
