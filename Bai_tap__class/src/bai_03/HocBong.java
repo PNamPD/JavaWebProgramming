@@ -17,7 +17,9 @@ public class HocBong {
     int finalGrade; // diem tong
     int Foul; // loi khi tham gia hoc
     int Exam; // bai kiem tra
+    public HocBong(){
     
+}
     public void Name(String Name){
         this.Name=Name;
     }

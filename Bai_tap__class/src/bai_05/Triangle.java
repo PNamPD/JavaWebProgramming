@@ -98,15 +98,30 @@ public class Triangle {
         else max=c;
         return max;
     }
-    public void xacDinh(int a,int b,int c){
-/*        int max;
-        if(this.a>this.b && this.a>this.c){
-            max=this.a;
-        }
-        else if(this.b>this.c && this.b>this.a){
-            max=this.b;
-        }
-        else max=this.c; */
+    public void inputInfo(){
+        do{
+            System.out.println("Nhap vao canh a= ");
+            this.a=in.nextInt();
+            if(this.a<=0){
+                System.out.println("Vui long nhap lai!");
+            }
+        }while(this.a<=0);
+        do{
+            System.out.println("Nhap vao canh b= ");
+            this.b=in.nextInt();
+            if(this.b<=0){
+                System.out.println("Vui long nhap lai!");
+            }
+        }while(this.b<=0);
+        do{
+            System.out.println("Nhap vao canh c= ");
+            this.c=in.nextInt();
+            if(this.c<=0){
+                System.out.println("Vui long nhap lai!");
+            }
+        }while(this.c<=0);      
+    }
+    public void xacDinh(){
         
         // test tam giac vuong
             if((rightTriangle(this.a,this.b,this.c)==true)|| (rightTriangle(this.b,this.c,this.a)==true) || (rightTriangle(this.c,this.a,this.b)==true)){
@@ -120,10 +135,10 @@ public class Triangle {
             else if(isoscelesTriangle(this.a,this.b,this.c)==true || isoscelesTriangle(this.b,this.c,this.a)==true ||isoscelesTriangle(this.c,this.a,this.b)==true ){
                 this.flag2=1;
             }
-        
-        if(testTamGiac(this.a,this.b,this.c)==true && testTamGiac(this.b,this.c,this.a)== true && testTamGiac(this.c,this.a,this.b)==true){
-            System.out.println("k phai tam giac");
-        }else if(this.flag2==1 && this.flag1==1){
+            
+           
+        if((this.a+this.b>=this.c) && (this.b+this.c>=this.a) && (this.c+this.a>=this.b)){
+           if(this.flag2==1 && this.flag1==1){
             System.out.println("Day la tam giac vuong can!");
             }
             else if(this.flag==1){
@@ -133,6 +148,20 @@ public class Triangle {
             }else if(this.flag2==1){
             System.out.println("Day la tam giac can!");
             }else System.out.println("Day la tam giac binh thuong");
+        }else  System.out.println("k phai tam giac");
     }
+    public void chuVi(){
+        int chuVi;
+        chuVi=this.a+this.b+this.c;
+        System.out.println("Chu vi= "+chuVi);
+        float dienTich;
+        // cong thuc heron
+        float S;
+        S= chuVi/2;
+        dienTich= (float)Math.sqrt(S*(S-this.a)*(S-this.b)*(S-this.c));
+        System.out.println("Dien tich: "+dienTich);
+    }
+    
+    
 }
 

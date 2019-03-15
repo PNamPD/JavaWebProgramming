@@ -3,19 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package bai_05;
-
-import java.util.Scanner;
+package bai_08;
 
 /**
  *
  * @author ASUS
  */
-public class demo5 {
+public class demo8 {
     public static void main(String[] args){
-        Triangle test= new Triangle();
+        soPhuc test=new soPhuc();
         test.inputInfo();
-        test.xacDinh();
-        test.chuVi();
+            test.printInfo();
+            test.add();
+            test.sub();
+            test.div();
+            test.mul(); 
     }
 }

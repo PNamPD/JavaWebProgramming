@@ -20,6 +20,7 @@ public class SoNguyenTo {
     
     
     public void setprimeNumber(int primeNumber){
+        
         this.primeNumber=primeNumber;
     }
     public int getprimeNumber(){
