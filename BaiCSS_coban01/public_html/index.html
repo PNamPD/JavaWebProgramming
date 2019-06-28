@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Javascript cơ bản</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .ab{
+                border: 1px solid black;
+                height: 30px;
+                width: 30px;
+                background-color: lightcyan;
+            } 
+        </style>
+        
+    </head>
+    <body>
+        <h1> Javascript căn bản </h1>
+        <br>
+        <h2> Máy tính đơn giản</h2>
+        <br>
+        <label>Số thứ 1:</label><input id="num1" > 
+            <button type="button" class="ab" value="+" onclick="calc('+')"/>+</button>
+            <button type="button" class="ab" value="-" onclick="calc('-')"/>-</button>
+            <br>
+        <label>Số thứ 2:</label><input id="num2"/> 
+            <button type="button" value="*" class="ab" onclick="calc('*')">*</button>
+            <button type="button" value="/" class="ab" onclick="calc('/')">/</button>
+            <br>
+        <label>Kết quả  :</label><input id="rs" readonly />
+        <script>
+            function calc(opt){
+                var num1Ele = document.getElementById('num1');
+                var num1 = parseFloat(num1Ele.value);
+                var num2Ele = document.getElementById('num2');
+                var num2 = parseFloat(num2Ele.value);
+                // tinh ket qua
+                var kq=0;
+                switch(opt){
+                    case '+': kq = num1 + num2;
+                        break;
+                    case '-': kq = num1 - num2;
+                        break;
+                    case '*': kq = num1 * num2;
+                        break;
+                    case '/': kq = num1 / num2;
+                        break;
+                        
+                }
+                        // hien thi
+                var rsEle = document.getElementById('rs');
+                rsEle.value = kq;
+            }
+            
+        </script>
+        
+        
+    </body>
+</html>
